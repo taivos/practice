@@ -1,0 +1,43 @@
+<!--
+listing for lab 2.2
+<html>
+        <head>
+		<meta charset=utf-8>
+                <title>Django Application</title>
+        </head>
+        <body>
+                <h1>Листинг каталога {{ dir_name }}</h1>
+                <ul>
+                        {% for item in dir %}
+                        <li><a href="">{{ item }}</a></li>
+                        {% endfor %}
+                        
+                        {% for item in fils %}
+                        <li>{{ item }}</li>
+                        {% endfor %}
+                                
+                </ul>
+        </body>
+</html>
+
+listing for lab 2.3
+-->
+
+<html>
+        <head>
+		<meta charset=utf-8>
+                <title>Django Application</title>
+        </head>
+        <body>
+                <h1>Листинг каталога {{ dir_name }}</h1>
+                        <table>
+                                {% for item in myTable %}
+                                        <tr>
+                                                {% for i in item %}
+                                                        <td>{{ i }}</td>
+                                                {% endfor %}
+                                        </tr>
+                                {% endfor %}
+                        </table>
+        </body>
+</html>
