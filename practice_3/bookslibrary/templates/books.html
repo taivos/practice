@@ -1,0 +1,20 @@
+<html>
+        <head>
+                <title>Django Application</title>
+        </head>
+        <body>
+                <h1>List of books</h1>
+                <table>
+                        <td><p><b>Title</b></p></td>
+                        <td><p><b>Author</b></p></td>
+                        <td><p><b>Publisher</b></p></td>
+                        {% for item in books %}
+                                <tr>
+                                        <td><a href="{{ item.get_absolute_url }}">{{ item.title }}</a></td>
+                                        <td>{{ item.get_authors }}</td>
+                                        <td>{{ item.publisher.title }}</td>
+                                </tr>
+                        {% endfor %}
+                </table>
+        </body>
+</html>
