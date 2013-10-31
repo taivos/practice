@@ -4,12 +4,14 @@ from django.conf.urls import patterns, include, url
 # from django.contrib import admin
 # admin.autodiscover()
 
-urlpatterns = patterns('',
+urlpatterns = patterns(
+    '',
     # Examples:
     url(r'^library/(?P<sub>(books){0,1}?)$', 'library.views.books'),
     url(r'^library/books/(?P<sub>\d+?)/$', 'library.views.book'),
     url(r'^library/authors/?$', 'library.views.authors'),
     url(r'^library/authors/(?P<sub>\d+?)/$', 'library.views.author'),
+
     # url(r'^$', 'bookslibrary.views.home', name='home'),
     # url(r'^bookslibrary/', include('bookslibrary.foo.urls')),
 
