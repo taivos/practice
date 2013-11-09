@@ -5,7 +5,7 @@ from django.contrib.contenttypes.models import ContentType
 
 
 class Author(models.Model):
-    first_name = models.CharField('first_name',        max_length=30)
+    first_name = models.CharField('first_name', max_length=30)
     last_name = models.CharField('last_name', max_length=30)
     email = models.EmailField(blank=True, null=True)
 
