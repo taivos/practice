@@ -5,7 +5,7 @@ DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
-    # ('taivos', 'taika20@mail.ru'),
+    ('taivos', 'taika20@mail.ru'),
 )
 
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
@@ -14,9 +14,9 @@ MANAGERS = ADMINS
 
 DATABASES = {
     'default': {
-        'ENGINE':  'django.db.backends.sqlite3',
+        'ENGINE': 'django.db.backends.sqlite3',
         # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME':  os.path.join(PROJECT_ROOT, 'data.db'),                      # Or path to database file if using sqlite3.
+        'NAME': os.path.join(PROJECT_ROOT, 'data.db'),                      # Or path to database file if using sqlite3.
         # The following settings are not used with sqlite3:
         'USER': '',
         'PASSWORD': '',
