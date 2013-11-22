@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset=utf-8>
+   <title>Books</title>
+</head>
+<body>
+   <h1>Authors info</h1>
+   <table border="1">
+   <tr>
+      <th>Name and surname</th>
+      <th>Email</th>
+      <th>Author's age</th>
+   </tr>
+   <tr>
+      <td>{{ authors }}</td>
+      <td>{{ authors.email }}</td>
+      {% if authors.birthyear %}
+      <td>{{ authors.birthyear }}</td>
+      {% else %}
+      <td> Age unknown </td>
+      {% endif %}
+   </tr>
+   </table>
+</body>
+</html>
