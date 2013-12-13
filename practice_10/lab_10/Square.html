@@ -1,0 +1,48 @@
+<html>
+<head>
+  <script> 
+  function screenSize() 
+  {
+        var w, h; 
+        w = (window.innerWidth ? window.innerWidth : (document.documentElement.clientWidth ? document.documentElement.clientWidth : document.body.offsetWidth));
+        h = (window.innerHeight ? window.innerHeight : (document.documentElement.clientHeight ? document.documentElement.clientHeight : document.body.offsetHeight));
+        return {w:w, h:h};
+  }
+
+  var step = 1,
+      i = 0,
+      id = null,
+      n = Math.floor((screenSize().h - 100)/step);
+
+  function falling() 
+  { 
+    if(i < n) {
+      var element = document.getElementById('square');
+      element.style.top=parseInt(element.style.top)+step+'px';
+      i++;
+      id = setTimeout('falling()', 1);
+    }
+    else { clearTimeout(id); id = null; }
+  }
+  
+  </script>
+  <style type="text/css">
+  *
+  {
+    margin: 0; padding: 0;
+  }
+  #square
+  {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    top: 0px;
+    background-color: red;
+  }
+
+  </style>
+</head>
+<body>
+  <div id="square" onclick="falling();" style="top: 0px;"></div>
+</body>
+</html>

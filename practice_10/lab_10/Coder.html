@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Кодировщик</title>
+		<script type="text/javascript">
+
+			var s = "";
+    		window.onload = setEvents;
+    
+    		function setEvents() {
+    			var firstElem = document.body;
+    			var newElem = document.createElement('h1');
+    			newElem.innerHTML = "Нажимайте кнопки на клавиатуре";
+    			firstElem.insertBefore(newElem,firstElem.firstChild);
+				window.onkeypress = ReadKey;            
+    		}
+
+			function ReadKey(event) 
+			{
+				var c = String.fromCharCode(event.keyCode);
+				if(c == ' ')
+					s += '&nbsp' + " ";
+				else
+					s += c + " ";
+    			document.getElementById('type-display').innerHTML = s;
+			}
+		</script>
+	</head>
+	<body>
+		<div id='type-display'></div>
+	</body>
+</html>

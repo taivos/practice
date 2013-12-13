@@ -1,0 +1,77 @@
+<html>
+<head>
+  <script> 
+      var aniframes = new Array(10),
+          frame = 0,
+          timeout_id = null; 
+   
+      for (var i = 0; i < 9; i++) {
+          aniframes[i] = new Image();                 
+          aniframes[i].src = "images/" + (i+1) + ".jpg";  
+      }
+      
+      function Next() {
+        if(frame < 8){
+          frame+=1
+          document.animation.src = aniframes[frame].src; 
+        }
+      }
+
+      function Prev() {
+        if(frame > 0){
+          frame-=1
+          document.animation.src = aniframes[frame].src; 
+        }
+      }
+  </script>
+  <style type="text/css">
+    #Prev
+    {
+      background: url(images/prev.gif) no-repeat;
+      margin-left: 350px;
+    }
+    #Prev:active
+    {
+      background: url(images/prev-over.gif) no-repeat;
+      margin-left: 350px;
+    }
+    #Next
+    {
+      background: url(images/next.gif) no-repeat;
+      margin-right: 350px;
+    }
+    #Next:active
+    {
+      background: url(images/next-over.gif) no-repeat;
+      margin-right: 350px;
+    }
+    input
+    {
+      display: block;
+      border: none;
+      width: 50px;
+      height: 50px;
+      float: left;
+    }
+
+    #image_place
+    {
+      display: table-cell; 
+      width: 850px; 
+      height: 650px;  
+      text-align: center; 
+      vertical-align: middle;
+      margin-bottom: 25px;
+    }
+  </style>
+</head>
+<body>
+  <div id="image_place">
+    <img name="animation" src="images/1.jpg">
+  </div>
+  <div>
+    <input type="button" id="Prev" onclick="Prev();"></a>
+    <input type="button" id="Next" onclick="Next();"></a>
+  </div>
+</body>
+</html>
